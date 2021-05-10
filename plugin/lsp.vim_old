@@ -1,0 +1,15 @@
+set completeopt=menuone,noinsert " noselect
+let g:competion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+fun! LspLocationList()
+  " lua vim.lsp.diagnostic.set_loclist({opent_loclist = false})
+endfun
+
+
+augroup MY_LSP
+  autocmd!
+  autocmd! BufWrite,BufEnter,InsertLeave * :call LspLocationList()
+augroup end
+
+
+inoremap <silent><expr> <CR> compe#confirm('<CR>')

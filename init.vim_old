@@ -1,0 +1,74 @@
+set exrc  " allows for project level .vimrc
+set encoding=utf8
+set number
+set relativenumber
+set tabstop=2
+
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set hidden
+set noerrorbells
+set nohlsearch
+set nowrap
+" set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+set signcolumn=yes
+" set noshowmode
+set colorcolumn=80
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
+Plug 'BurntSushi/ripgrep'
+Plug 'theprimeagen/vim-be-good'
+
+Plug 'gruvbox-community/gruvbox'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+" Plug 'mbbill/undotree'
+Plug 'vim-utils/vim-man'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
+" Pretttier
+" Plug 'sbdchd/neoformat'
+
+call plug#end()
+
+" lua require'nvim-treesitter.configs'.setup { highlight  = { enable = true } }
+" lua require'nvim-web-devicons'.setup { default = true }
+lua require("zanthrash")
+
+highlight Normal guibg=none
+let mapleader = " "
+
+colorscheme gruvbox
+highlight Normal guibg=none
+
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
