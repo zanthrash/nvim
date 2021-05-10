@@ -59,7 +59,6 @@ local efm_config = os.getenv('HOME') ..
 end ]]
 local function eslint_config_exists()
   local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-  functions.tprint(eslintrc)
 
   if not vim.tbl_isempty(eslintrc) then
     return true
@@ -112,8 +111,8 @@ return function(language_server_path)
       end,
         filetypes = vim.tbl_keys(languages),
         settings = {
-          -- rootMarkers = { "package.json", ".git" },
-          -- lintDebounce = 500,
+          rootMarkers = { "package.json", ".git" },
+          lintDebounce = 500,
           languages = languages
         },
     }
