@@ -1,6 +1,6 @@
 local M = {}
 
-M.orgamize_imports = function()
+M.organize_imports = function()
   local params = {
     command = "_typescript.organizeImports",
     arguments = {vim.api.nvim_buf_get_name(0)},

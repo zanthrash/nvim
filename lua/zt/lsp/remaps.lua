@@ -29,7 +29,7 @@ function M.set(cap, bufnr)
   if cap.codeActionProvider then
     buf_set_keymap('n', '<leader>fa', "<cmd>lua require('telescope.builtin').lsp_code_actions({timeout = 1000})<CR>", opts)
     buf_set_keymap('v', '<leader>fa', "<cmd>lua require('telescope.builtin').lsp_range_code_actions({timeout = 1000})<CR>", opts)
-    buf_set_keymap('n', '<leader>fo', "<cmd>lua require('zt.lsp.functions').organize_imports<CR>", opts)
+    buf_set_keymap('n', '<leader>fo', "<cmd>lua require('zt.lsp.functions').organize_imports()<CR>", opts)
   end
 
   if cap.documentFormattingProvider then
@@ -43,8 +43,8 @@ function M.set(cap, bufnr)
   end
 
   buf_set_keymap('n', '<leader>th', "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
-  buf_set_keymap('n', '<C-k>', ":lua require('lspsaga.action').smart_scroll_with_saga(1)", opts)
-  buf_set_keymap('n', '<C-j>', ":lua require('lspsaga.action').smart_scroll_with_saga(-1)", opts)
+  buf_set_keymap('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+  buf_set_keymap('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
   buf_set_keymap('n', '<leader>fe', "<cmd>lua require('zt.lsp.functions').show_diagnostics()<CR>", opts)
 
   buf_set_keymap('n', '<leader>fE', "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", opts)

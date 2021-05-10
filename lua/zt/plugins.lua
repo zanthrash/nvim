@@ -42,10 +42,13 @@ return require('packer').startup {
 
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-
     -- Theming
     use 'gruvbox-community/gruvbox'
 
+    -- icons
+    use 'kyazdani42/nvim-web-devicons'
+
+    use 'mbbill/undotree'
 
     -- LSP: Autocomplete & Linters
     use 'neovim/nvim-lspconfig'
@@ -75,6 +78,8 @@ return require('packer').startup {
     }
 
     use 'haringsrob/nvim_context_vt' -- shows treesitter context in end of parenthesis
+
+    use 'vim-airline/vim-airline'
 
   end
 
