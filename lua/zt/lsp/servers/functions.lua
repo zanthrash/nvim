@@ -30,6 +30,8 @@ M.lsp_install_servers = function()
 
     -- must be installed globally
     installLanguageServer('*', 'efm')
+    installLanguageServer('*', 'diagnosticls')
+
 end
 
 return M

@@ -43,6 +43,7 @@ local language_server_path = vim.fn.stdpath("data") .. "/lspinstall"
 
 local servers = {
   efm = require('zt.lsp.servers.efm')(language_server_path),
+  -- diagnosticls = require('zt.lsp.servers.diagnosticls')(language_server_path),
   -- bashls = require('zt.lsp.servers.bashls')(language_server_path)
   -- yamlls = require('zt.lsp.servers.yamlls')(language_server_path)
   -- jsonls = require('zt.lsp.servers.jsonls')(language_server_path)
@@ -56,4 +57,5 @@ local servers = {
 for server, config in pairs(servers) do
   lsp[server].setup(vim.tbl_deep_extend("force", default_lsp_config, config))
 end
+
 
