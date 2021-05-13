@@ -1,6 +1,7 @@
 vim.o.showmatch = true
 vim.o.hidden = true
 vim.o.errorbells = false
+vim.o.spelllang = 'en'
 
 
 vim.o.tabstop = 2
@@ -32,7 +33,8 @@ vim.o.updatetime = 50
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force user to select one from the menu
-vim.o.completeopt = 'menu,menuone,noinsert'
+vim.o.completeopt = 'menuone,noselect'
+
 
 vim.o.colorcolumn = '80'
 vim.o.signcolumn = 'yes:2'

@@ -14,13 +14,14 @@ function M.set(cap, bufnr)
     buf_set_keymap('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   end
 
+  -- buf_set_keymap('n', '<leader>sh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<leader>sh', "<cmd>lua require'lspsaga.signaturehelp'.signature_help()<CR>", opts)
+
   if cap.implementationProvider then
     buf_set_keymap('n', '<leader>ti', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   end
 
-  if cap.referenceProvider then
-    buf_set_keymap('n', '<leader>tr', "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
-  end
+  buf_set_keymap('n', '<leader>tlr', "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 
   if cap.documentSymbolProvider then
     buf_set_keymap('n', '<leader>to', "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", opts)

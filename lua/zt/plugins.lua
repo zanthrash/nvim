@@ -1,14 +1,14 @@
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
 
-if not packer_exists then 
+if not packer_exists then
   if vim.fn.input("Download Packer? (y for yes)") ~= "y" then
     return
   end
 
   print("Downloading packer.nvim...")
-  
+
   local directory = string.format(
-    '%s/site/pack/packer/opt/', 
+    '%s/site/pack/packer/opt/',
     vim.fn.stdpath('data')
   )
 
@@ -24,18 +24,26 @@ if not packer_exists then
   print("Downloaded packer.vim")
   print("Reopen NVIM and run :PackerSync twice")
 
-  return 
+  return
 end
 
 return require('packer').startup {
   function(use)
     use {'wbthomason/packer.nvim', opt = true}
 
+    -- GIT
     use 'tpope/vim-fugitive'
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      }
+    }
+
     use 'tpope/vim-commentary'
 
-    use { 
-      'nvim-telescope/telescope.nvim', 
+    use {
+      'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
       config = function() require 'zt.plugins.telescope' end
     }
