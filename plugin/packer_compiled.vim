@@ -71,9 +71,21 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
+  kommentary = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["lsp-status.nvim"] = {
     loaded = true,
@@ -106,6 +118,11 @@ _G.packer_plugins = {
   ["nvim-lspinstall"] = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0" },
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -149,13 +166,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-airline"
   },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-commentary"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-test"
   },
   ["vim-vsnip"] = {
     loaded = true,
@@ -168,6 +189,10 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
+-- Config for: nvim-tree.lua
+time("Config for nvim-tree.lua", true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time("Config for nvim-tree.lua", false)
 -- Config for: telescope.nvim
 time("Config for telescope.nvim", true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.telescope\frequire\0", "config", "telescope.nvim")

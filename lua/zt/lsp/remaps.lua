@@ -22,6 +22,7 @@ function M.set(cap, bufnr)
   end
 
   buf_set_keymap('n', '<leader>tlr', "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
+  buf_set_keymap('n', '<leader>tr', "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 
   if cap.documentSymbolProvider then
     buf_set_keymap('n', '<leader>to', "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", opts)

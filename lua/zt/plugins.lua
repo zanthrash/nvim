@@ -40,8 +40,17 @@ return require('packer').startup {
       }
     }
 
-    use 'tpope/vim-commentary'
+    use 'glepnir/dashboard-nvim'
 
+    use {
+      'kyazdani42/nvim-tree.lua',
+      config = function() require 'zt.plugins.nvim-tree' end
+    }
+
+    -- use 'tpope/vim-commentary'
+    use 'b3nj5m1n/kommentary'
+
+    use 'tpope/vim-surround' -- Change surrounding arks
     use {
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
@@ -49,6 +58,8 @@ return require('packer').startup {
     }
 
     use 'nvim-telescope/telescope-fzy-native.nvim'
+
+    use 'vim-test/vim-test'
 
     -- Theming
     use 'gruvbox-community/gruvbox'
