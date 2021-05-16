@@ -41,6 +41,23 @@ return require('packer').startup {
     }
 
     use 'glepnir/dashboard-nvim'
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+          plugins = {
+            spelling = {
+              enabled = true,
+              suggestions = 20,
+            }
+          }
+        }
+      end
+    }
+
 
     use {
       'kyazdani42/nvim-tree.lua',
@@ -72,10 +89,16 @@ return require('packer').startup {
     -- LSP: Autocomplete & Linters
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/lsp-status.nvim'
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'tjdevries/lsp_extensions.nvim'
     use 'glepnir/lspsaga.nvim'
     use 'onsails/lspkind-nvim'
     use 'ray-x/lsp_signature.nvim'
+
+
+    use {'pwntester/octo.nvim', config=function()
+      require"octo".setup()
+    end}
 
     use {
       'hrsh7th/nvim-compe', branch = 'master'

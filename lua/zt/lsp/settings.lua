@@ -42,7 +42,7 @@ local language_server_path = vim.fn.stdpath("data") .. "/lspinstall"
 
 
 local servers = {
-  efm = require('zt.lsp.servers.efm')(language_server_path),
+  -- efm = require('zt.lsp.servers.efm')(language_server_path),
   -- diagnosticls = require('zt.lsp.servers.diagnosticls')(language_server_path),
   -- bashls = require('zt.lsp.servers.bashls')(language_server_path)
   -- yamlls = require('zt.lsp.servers.yamlls')(language_server_path)

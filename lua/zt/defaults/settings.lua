@@ -2,6 +2,7 @@ vim.o.showmatch = true
 vim.o.hidden = true
 vim.o.errorbells = false
 vim.o.spelllang = 'en'
+vim.o.spell = true
 
 
 vim.o.tabstop = 2
@@ -35,11 +36,11 @@ vim.o.updatetime = 50
 -- noselect: Do not select, force user to select one from the menu
 vim.o.completeopt = 'menuone,noselect'
 
+vim.o.timeoutlen = 300
 
 vim.o.colorcolumn = '80'
 vim.o.signcolumn = 'yes:2'
 
 vim.g.loaded_matchparen = 1
 vim.g.mapleader = ' '
-
 
