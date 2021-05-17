@@ -106,7 +106,8 @@ return require('packer').startup {
 
         -- Snippets
     use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
+    -- use 'hrsh7th/vim-vsnip-integ'
+    use "rafamadriz/friendly-snippets"
 
     -- to download lsp servers
     -- TODO: check the tjdevries library
