@@ -66,8 +66,8 @@ return require('packer').startup {
 
     -- use 'tpope/vim-commentary'
     use 'b3nj5m1n/kommentary'
-
     use 'tpope/vim-surround' -- Change surrounding arks
+
     use {
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
@@ -76,7 +76,10 @@ return require('packer').startup {
 
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    use 'vim-test/vim-test'
+    -- use 'vim-test/vim-test'
+
+    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+
 
     -- Theming
     use 'gruvbox-community/gruvbox'
@@ -96,7 +99,12 @@ return require('packer').startup {
     use 'ray-x/lsp_signature.nvim'
 
 
-    use {'pwntester/octo.nvim', config=function()
+    --[[ use {'pwntester/octo.nvim', config=function()
+      require"octo".setup()
+    end} ]]
+
+    -- local octo to deal with GHE 2.21 api shenanagans
+    use { '~/play/octo.nvim', config=function()
       require"octo".setup()
     end}
 
@@ -123,6 +131,12 @@ return require('packer').startup {
     use 'haringsrob/nvim_context_vt' -- shows treesitter context in end of parenthesis
 
     use 'vim-airline/vim-airline'
+
+    use 'maxmellon/vim-jsx-pretty'
+
+    use 'suy/vim-context-commentstring'
+    use 'kevinhwang91/nvim-bqf'
+
 
   end
 
