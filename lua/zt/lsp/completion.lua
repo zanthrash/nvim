@@ -28,22 +28,3 @@ require'compe'.setup {
 vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', { noremap = true, expr = true, silent = true })
 
 
--- require'compe'.setup {
---   enabled = true,
---   debug = false,
---   min_length = 1,
-
---   source = {
---     vsnip = {
---       flietypes = {'markdonw', 'json', 'yaml', 'css', 'scss', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'typescript.tsx'},
---       sticky_char = '0'
---     },
---     nvim_lua = { 'lua' },
---     nvim_lsp = {
---       flietypes = {'markdonw', 'json', 'yaml', 'css', 'scss', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'typescript.tsx'},
---     },
---     path = true,
---     buffer = true
-
---   }
--- }

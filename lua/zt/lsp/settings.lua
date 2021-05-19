@@ -48,8 +48,8 @@ local servers = {
   -- yamlls = require('zt.lsp.servers.yamlls')(language_server_path)
   -- jsonls = require('zt.lsp.servers.jsonls')(language_server_path)
   tsserver = require('zt.lsp.servers.tsserver')(language_server_path, on_attach),
-  -- html = require('zt.lsp.servers.htmlls')(language_server_path)
-  -- cssls = require('zt.lsp.servers.cssls')(language_server_path)
+  html = require('zt.lsp.servers.html')(language_server_path),
+  cssls = require('zt.lsp.servers.cssls')(language_server_path),
   sumneko_lua = require('zt.lsp.servers.sumneko_lua')(language_server_path)
   -- dockerls = require('zt.lsp.servers.dockerls')(language_server_path)
 }

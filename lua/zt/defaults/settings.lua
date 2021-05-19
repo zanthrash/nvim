@@ -2,7 +2,7 @@ vim.o.showmatch = true
 vim.o.hidden = true
 vim.o.errorbells = false
 vim.o.spelllang = 'en'
-vim.o.spell = true
+-- vim.o.spell = false
 
 
 vim.o.tabstop = 2

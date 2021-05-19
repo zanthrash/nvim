@@ -33,6 +33,7 @@ return require('packer').startup {
 
     -- GIT
     use 'tpope/vim-fugitive'
+
     use {
       'lewis6991/gitsigns.nvim',
       requires = {
@@ -41,6 +42,7 @@ return require('packer').startup {
     }
 
     use 'glepnir/dashboard-nvim'
+
     use {
       "folke/which-key.nvim",
       config = function()
@@ -76,9 +78,9 @@ return require('packer').startup {
 
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    -- use 'vim-test/vim-test'
+    use 'vim-test/vim-test'
 
-    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+    -- use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
 
 
     -- Theming
@@ -118,8 +120,6 @@ return require('packer').startup {
     use "rafamadriz/friendly-snippets"
 
     -- to download lsp servers
-    -- TODO: check the tjdevries library
-    -- use 'mattn/vim-lsp-settings'
     use 'kabouzeid/nvim-lspinstall'
 
     -- Language packs
