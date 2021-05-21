@@ -47,8 +47,8 @@ local function save_profiles(threshold)
 end
 
 time("Luarocks path setup", true)
-local package_path_str = "/Users/zthrash/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/zthrash/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/zthrash/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/zthrash/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/zthrash/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/z002qfv/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/z002qfv/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/z002qfv/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/z002qfv/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/z002qfv/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,166 +71,170 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/coc.nvim"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/friendly-snippets"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   gruvbox = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
   kommentary = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["lsp-status.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/lsp-status.nvim"
   },
   ["lsp_extensions.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["nvim-bqf"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-bqf"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-bqf"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lsp-ts-utils"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0" },
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   nvim_context_vt = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/nvim_context_vt"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim_context_vt"
   },
   ["octo.nvim"] = {
     config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0" },
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/octo.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/octo.nvim"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
     config = { "\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.telescope\frequire\0" },
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   undotree = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/undotree"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/undotree"
   },
   ["vim-airline"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-airline"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-airline"
   },
   ["vim-context-commentstring"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-context-commentstring"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-context-commentstring"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
   ["vim-jsx-pretty"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
   ["vim-test"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-test"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-test"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
   ["which-key.nvim"] = {
-    config = { "\27LJ\2\n|\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\fplugins\1\0\0\rspelling\1\0\0\1\0\2\16suggestions\3\20\fenabled\2\nsetup\14which-key\frequire\0" },
+    config = { "\27LJ\2\n|\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\fplugins\1\0\0\rspelling\1\0\0\1\0\2\fenabled\2\16suggestions\3\20\nsetup\14which-key\frequire\0" },
     loaded = true,
-    path = "/Users/zthrash/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
 time("Defining packer_plugins", false)
--- Config for: which-key.nvim
-time("Config for which-key.nvim", true)
-try_loadstring("\27LJ\2\n|\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\fplugins\1\0\0\rspelling\1\0\0\1\0\2\16suggestions\3\20\fenabled\2\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time("Config for which-key.nvim", false)
--- Config for: octo.nvim
-time("Config for octo.nvim", true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
-time("Config for octo.nvim", false)
--- Config for: nvim-tree.lua
-time("Config for nvim-tree.lua", true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time("Config for nvim-tree.lua", false)
 -- Config for: telescope.nvim
 time("Config for telescope.nvim", true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.telescope\frequire\0", "config", "telescope.nvim")
 time("Config for telescope.nvim", false)
+-- Config for: which-key.nvim
+time("Config for which-key.nvim", true)
+try_loadstring("\27LJ\2\n|\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\fplugins\1\0\0\rspelling\1\0\0\1\0\2\fenabled\2\16suggestions\3\20\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time("Config for which-key.nvim", false)
+-- Config for: nvim-tree.lua
+time("Config for nvim-tree.lua", true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time("Config for nvim-tree.lua", false)
+-- Config for: octo.nvim
+time("Config for octo.nvim", true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
+time("Config for octo.nvim", false)
 if should_profile then save_profiles() end
 
 END

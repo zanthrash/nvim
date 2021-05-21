@@ -136,7 +136,9 @@ return require('packer').startup {
 
     use 'suy/vim-context-commentstring'
     use 'kevinhwang91/nvim-bqf'
+    use {'neoclide/coc.nvim', branch = 'release'}
 
+    use 'theprimeagen/vim-be-good'
 
   end
 

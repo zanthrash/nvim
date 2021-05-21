@@ -3,8 +3,6 @@ vim.o.hidden = true
 vim.o.errorbells = false
 vim.o.spelllang = 'en'
 -- vim.o.spell = false
-
-
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
@@ -23,7 +21,7 @@ vim.o.hlsearch = false
 vim.o.scrolloff = 10
 
 -- Give more space for displaying messages
-vim.o.cmdheight = 1
+vim.o.cmdheight = 2
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
@@ -40,7 +38,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.timeoutlen = 300
 
 vim.o.colorcolumn = '80'
-vim.o.signcolumn = 'yes:2'
+vim.o.signcolumn = 'yes'
 
 vim.g.loaded_matchparen = 1
 vim.g.mapleader = ' '

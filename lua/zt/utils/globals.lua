@@ -11,3 +11,7 @@ _G.reload = function()
   end
   print('Reloaded '.. counter .. ' modules!')
 end
+
+_G.smart_tab = function()
+  return vim.fn.pumvisible() == 1 and functions.t'<C-n>' or functions.t'<Tab>'
+end
