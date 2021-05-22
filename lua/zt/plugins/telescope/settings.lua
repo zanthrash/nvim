@@ -4,11 +4,13 @@ local telescope = require('telescope')
 telescope.setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
-        prompt_prefix = ' > ',
         color_devicons = true,
         file_ignore_patterns = {".backup",".swap",".langservers",".session",".undo","*.git","node_modules","vendor",".cache",".vscode-server",".Desktop",".Documents","classes"},
         shorten_path = true,
         use_less = true,
+        prompt_prefix = "  ",
+        selection_caret = " ",
+
 
         set_env = { ['COLORTERM'] = 'truecolor' },
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,

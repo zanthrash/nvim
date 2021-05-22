@@ -106,9 +106,9 @@ return require('packer').startup {
     end} ]]
 
     -- local octo to deal with GHE 2.21 api shenanagans
-    use { '~/play/octo.nvim', config=function()
+    --[[ use { '~/play/octo.nvim', config=function()
       require"octo".setup()
-    end}
+    end} ]]
 
     use {
       'hrsh7th/nvim-compe', branch = 'master'
@@ -116,7 +116,6 @@ return require('packer').startup {
 
         -- Snippets
     use 'hrsh7th/vim-vsnip'
-    -- use 'hrsh7th/vim-vsnip-integ'
     use "rafamadriz/friendly-snippets"
 
     -- to download lsp servers
@@ -127,6 +126,7 @@ return require('packer').startup {
       'nvim-treesitter/nvim-treesitter',
       run = function() vim.cmd [[TSUpdate]] end
     }
+    use "windwp/nvim-ts-autotag"
 
     use 'haringsrob/nvim_context_vt' -- shows treesitter context in end of parenthesis
 
@@ -136,9 +136,11 @@ return require('packer').startup {
 
     use 'suy/vim-context-commentstring'
     use 'kevinhwang91/nvim-bqf'
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- use {'neoclide/coc.nvim', branch = 'release'}
 
     use 'theprimeagen/vim-be-good'
+
+    use 'windwp/nvim-autopairs'
 
   end
 
