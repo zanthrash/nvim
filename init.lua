@@ -43,6 +43,7 @@ require 'zt.testing.remaps'
 require 'zt.treesitter.settings'
 require 'zt.which-key'
 
+require 'zt.galaxyline'
 
 
 vim['test#strategy'] = 'neovim'

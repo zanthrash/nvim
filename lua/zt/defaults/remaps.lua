@@ -13,6 +13,6 @@ vnoremap('<leader>d', '"_d')
 vnoremap('J', ":m '>+1<CR>gv=gv")
 vnoremap('K', ":m '<-2<CR>gv=gv")
 
+inoremap('jj', '<ESC>')
 -- vnoremap('<leader>p', '"_dP')
 
- 

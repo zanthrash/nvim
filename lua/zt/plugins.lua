@@ -114,6 +114,9 @@ return require('packer').startup {
       'hrsh7th/nvim-compe', branch = 'master'
     }
 
+    -- debugging
+    use "mfussenegger/nvim-dap"
+
         -- Snippets
     use 'hrsh7th/vim-vsnip'
     use "rafamadriz/friendly-snippets"
@@ -130,7 +133,8 @@ return require('packer').startup {
 
     use 'haringsrob/nvim_context_vt' -- shows treesitter context in end of parenthesis
 
-    use 'vim-airline/vim-airline'
+    -- use 'vim-airline/vim-airline'
+    use 'glepnir/galaxyline.nvim'
 
     use 'maxmellon/vim-jsx-pretty'
 
