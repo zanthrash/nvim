@@ -6,7 +6,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 configs.emmet_ls = {
   default_config = {
     cmd = {'emmet-ls', '--stdio'};
-    filetypes = {'html', 'css'};
+    filetypes = {'html', 'css', 'typescriptreact', 'javascriptreact'};
     root_dir = function()
       return vim.loop.cwd()
     end;
@@ -14,7 +14,8 @@ configs.emmet_ls = {
   };
 }
 
-nvim_lsp.emmet_ls.setup{
-  capabilities = capabilities
-  -- on_attach = on_attach;
+
+nvim_lsp.emmet_ls.setup {
+  capabilities = capabilities,
+  on_attach = require'zt.lsp'.common_on_attach
 }
