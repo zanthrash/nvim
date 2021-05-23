@@ -41,6 +41,8 @@ require('zt.lsp.yaml-ls')
 require 'zt.git'
 require 'zt.testing.remaps'
 require 'zt.treesitter.settings'
+require 'zt.which-key'
+
 
 
 vim['test#strategy'] = 'neovim'
