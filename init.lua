@@ -8,9 +8,10 @@ require 'zt.plugins'
 require 'zt.theme'
 require 'zt.dashboard'
 require 'zt.compe'
+require 'zt.autopairs'
 
 require 'zt.lsp'
-require('zt.lsp.angular-ls')
+-- require('zt.lsp.angular-ls')
 require('zt.lsp.bash-ls')
 require('zt.lsp.clangd')
 require('zt.lsp.css-ls')
@@ -51,5 +52,3 @@ vim['test#strategy'] = 'neovim'
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-

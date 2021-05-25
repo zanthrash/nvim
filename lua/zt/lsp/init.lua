@@ -121,11 +121,11 @@ local function documentFormat(client, bufnr)
   end
 end
 
-
 local lsp_config = {}
 
+
 function lsp_config.common_on_attach(client, bufnr)
-    documentHighlight(client, bufnr)
+    -- documentHighlight(client, bufnr)
     documentFormat(client, bufnr)
 end
 

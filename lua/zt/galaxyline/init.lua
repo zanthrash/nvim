@@ -124,9 +124,12 @@ gls.left[7] = {
 
 gls.left[8] = {
     FileName = {
-      provider = 'FileName',
+      -- provider = 'FileName',
+      provider = function()
+        return vim.fn.expand("%:F")
+      end,
       condition = condition.buffer_not_empty,
-      separator = '',
+      separator = ' ',
       -- separator_highlight = {colors.purple,colors.darkblue},
       highlight = {colors.magenta, colors.bg}
     }

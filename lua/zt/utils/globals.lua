@@ -1,6 +1,6 @@
 local functions = require 'zt.utils.functions'
 
-_G.reload = function() 
+_G.reload = function()
   local counter = 0
   for moduleName in pairs(package.loaded) do
     if functions.starts_with(moduleName, 'zt.') then
@@ -78,10 +78,10 @@ O = {
     },
     tailwindls = {filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}},
     clang = {diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}},
-	ruby = {
-		diagnostics = {virtualtext = {spacing = 0, prefix = ""}, signs = true, underline = true},
-		filetypes = {'rb', 'erb', 'rakefile'}
-	},
+    ruby = {
+      diagnostics = {virtualtext = {spacing = 0, prefix = ""}, signs = true, underline = true},
+      filetypes = {'rb', 'erb', 'rakefile'}
+    },
     -- css = {formatter = '', autoformat = false, virtual_text = true},
     -- json = {formatter = '', autoformat = false, virtual_text = true}
 
@@ -97,9 +97,6 @@ O = {
 		footer= {'chrisatmachine.com'}
 	}
 }
-
-DATA_PATH = vim.fn.stdpath('data')
-CACHE_PATH = vim.fn.stdpath('cache')
 
 
 DATA_PATH = vim.fn.stdpath('data')

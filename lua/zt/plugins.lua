@@ -94,7 +94,7 @@ return require('packer').startup {
     -- LSP: Autocomplete & Linters
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/lsp-status.nvim'
-    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+    -- use 'jose-elias-alvarez/nvim-lsp-ts-utils'
     use 'tjdevries/lsp_extensions.nvim'
     use 'glepnir/lspsaga.nvim'
     use 'onsails/lspkind-nvim'
@@ -145,6 +145,8 @@ return require('packer').startup {
     use 'theprimeagen/vim-be-good'
 
     use 'windwp/nvim-autopairs'
+    use 'famiu/nvim-reload'
+
 
     use {
       "folke/todo-comments.nvim",
