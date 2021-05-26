@@ -64,6 +64,8 @@ vim.api.nvim_set_keymap('n', '<Leader>m', "<cmd>lua require('harpoon.mark').add_
 vim.api.nvim_set_keymap('n', '<Leader>M', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>t', "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {noremap = true, silent = true})
 
+-- lsp
+vim.api.nvim_set_keymap('n', '<Leader>R', "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients()); vim.cmd [[e]]<CR>", {noremap = true, silent = true})
 -- Comments
 --[[ vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true}) ]]
@@ -126,8 +128,6 @@ local mappings = {
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
-
-
 
 
     s = {

@@ -91,9 +91,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
-  kommentary = {
+  harpoon = {
     loaded = true,
-    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/harpoon"
   },
   ["lsp-status.nvim"] = {
     loaded = true,
@@ -156,6 +156,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
   },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -199,17 +203,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-be-good"
   },
-  ["vim-context-commentstring"] = {
+  ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-context-commentstring"
+    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-jsx-pretty"] = {
-    loaded = true,
-    path = "/Users/z002qfv/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -231,22 +231,22 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: telescope.nvim
-time("Config for telescope.nvim", true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.telescope\frequire\0", "config", "telescope.nvim")
-time("Config for telescope.nvim", false)
--- Config for: todo-comments.nvim
-time("Config for todo-comments.nvim", true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time("Config for todo-comments.nvim", false)
--- Config for: nvim-tree.lua
-time("Config for nvim-tree.lua", true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time("Config for nvim-tree.lua", false)
 -- Config for: which-key.nvim
 time("Config for which-key.nvim", true)
 try_loadstring("\27LJ\2\n|\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\fplugins\1\0\0\rspelling\1\0\0\1\0\2\16suggestions\3\20\fenabled\2\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
 time("Config for which-key.nvim", false)
+-- Config for: nvim-tree.lua
+time("Config for nvim-tree.lua", true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time("Config for nvim-tree.lua", false)
+-- Config for: todo-comments.nvim
+time("Config for todo-comments.nvim", true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time("Config for todo-comments.nvim", false)
+-- Config for: telescope.nvim
+time("Config for telescope.nvim", true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25zt.plugins.telescope\frequire\0", "config", "telescope.nvim")
+time("Config for telescope.nvim", false)
 if should_profile then save_profiles() end
 
 END

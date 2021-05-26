@@ -66,8 +66,11 @@ return require('packer').startup {
       config = function() require 'zt.plugins.nvim-tree' end
     }
 
-    -- use 'tpope/vim-commentary'
-    use 'b3nj5m1n/kommentary'
+    use 'tpope/vim-commentary'
+    -- use 'b3nj5m1n/kommentary'
+    -- use 'suy/vim-context-commentstring'
+
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
     use 'tpope/vim-surround' -- Change surrounding arks
 
     use {
@@ -136,9 +139,8 @@ return require('packer').startup {
     -- use 'vim-airline/vim-airline'
     use 'glepnir/galaxyline.nvim'
 
-    use 'maxmellon/vim-jsx-pretty'
+    -- use 'maxmellon/vim-jsx-pretty'
 
-    use 'suy/vim-context-commentstring'
     use 'kevinhwang91/nvim-bqf'
     -- use {'neoclide/coc.nvim', branch = 'release'}
 

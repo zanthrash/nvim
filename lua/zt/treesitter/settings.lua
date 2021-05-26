@@ -5,6 +5,9 @@ treesitter.setup {
   highlight = {
     enable = true,
   },
-  autotag = {enable = true }
+  autotag = {enable = true },
+  context_commentstring = {
+    enable = true
+  }
 
 }
