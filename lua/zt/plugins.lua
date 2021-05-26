@@ -143,6 +143,7 @@ return require('packer').startup {
     -- use {'neoclide/coc.nvim', branch = 'release'}
 
     use 'theprimeagen/vim-be-good'
+    use 'ThePrimeagen/harpoon'
 
     use 'windwp/nvim-autopairs'
     use 'famiu/nvim-reload'

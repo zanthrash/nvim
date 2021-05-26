@@ -44,8 +44,8 @@ local opts = {
 }
 
 -- Set leader
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
-vim.g.mapleader = ' '
+--[[ vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+vim.g.mapleader = ' ' ]]
 
 -- no hl
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
@@ -59,21 +59,32 @@ vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap 
 -- dashboard
 vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
 
+-- harpoon
+vim.api.nvim_set_keymap('n', '<Leader>m', "<cmd>lua require('harpoon.mark').add_file()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>M', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>t', "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>", {noremap = true, silent = true})
+
 -- Comments
 --[[ vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true}) ]]
 
--- close buffer
-vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
+-- close buffer https://github.com/romgrk/barbar.nvim
+-- vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
 
 -- TODO create entire treesitter section
 
 local mappings = {
     -- ["/"] = "Comment",
-    ["c"] = "Close Buffer",
+    -- ["c"] = "Close Buffer",
     ["e"] = "Explorer",
     ["f"] = "Find File",
     ["h"] = "No Highlight",
+    ["m"] = "Harpoon File",
+    ["M"] = "Harpoon Menu",
+    ["t"] = "Goto Terminal",
+    ["Y"] = "Yank File to Clipboard",
+    ["y"] = "Yank to Clipboard",
+
     d = {
         name = "+Debug",
         b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
@@ -129,6 +140,19 @@ local mappings = {
         R = {"<cmd>Telescope registers<cr>", "Registers"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
+
+    b = {
+      name = "+Buffers",
+      l = "List",
+    },
+
+    r = {
+      name = "+Run",
+      t = {
+        name = "+Test"
+      }
+    },
+
     S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}}
 }
 

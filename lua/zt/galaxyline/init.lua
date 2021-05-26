@@ -1,4 +1,6 @@
 local gl = require('galaxyline')
+local path = require("plenary.path").path
+
 -- get my theme in galaxyline repo
 -- local colors = require('galaxyline.theme').default
 local colors = {
@@ -122,12 +124,44 @@ gls.left[7] = {
     }
 }
 
+local last_name_results = nil
+
+local function split(inputstr, sep)
+    if sep == nil then
+        sep = "%s"
+    end
+
+    local t = {}
+    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+        table.insert(t, str)
+    end
+    return t
+  end
+
+local function get_file_name()
+    local name = vim.fn.expand("%:F")
+
+    if not name or name == "" then
+        return "(no name)"
+    end
+
+    local name_parts = split(name, path.sep)
+    local name_results = {}
+    for idx = 1, #name_parts - 1 do
+        table.insert(name_results, name_parts[idx]:sub(1, 1))
+        table.insert(name_results, path.sep)
+    end
+    table.insert(name_results, name_parts[#name_parts])
+    last_name_results = table.concat(name_results)
+    return last_name_results
+end
+
 gls.left[8] = {
     FileName = {
       -- provider = 'FileName',
-      provider = function()
-        return vim.fn.expand("%:F")
-      end,
+      provider = get_file_name,
+        --[[ return vim.fn.expand("%:F")
+      end, ]]
       condition = condition.buffer_not_empty,
       separator = ' ',
       -- separator_highlight = {colors.purple,colors.darkblue},
