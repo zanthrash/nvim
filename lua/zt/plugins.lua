@@ -103,6 +103,7 @@ return require('packer').startup {
     use 'onsails/lspkind-nvim'
     use 'ray-x/lsp_signature.nvim'
 
+    use 'rizzatti/dash.vim'
 
     --[[ use {'pwntester/octo.nvim', config=function()
       require"octo".setup()
