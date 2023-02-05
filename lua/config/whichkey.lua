@@ -51,7 +51,7 @@ function M.setup()
             name = "Packer",
             c = { "<Cmd>PackerCompile<CR>", "Compile" },
             i = { "<Cmd>PackerInstall<CR>", "Install" },
-            s = { "<Cmd>PackerSync<CR>", "Compile" },
+            s = { "<Cmd>PackerSync<CR>", "Sync" },
             S = { "<Cmd>PackerStatus<CR>", "Status" },
             u = { "<Cmd>PackerUpdate<CR>", "Update" },
         }
