@@ -7,13 +7,38 @@ return function(use)
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("config.whichkey").setup()
     end
   }
+
+  use {
+    "nvim-neotest/neotest",
+    opt = true,
+    wants = {
+      "plenary.nvim",
+      "nvim-treesitter",
+      "FixCursorHold.nvim",
+      "neotest-plenary",
+      "neotest-jest",
+      "neotest-go",
+      "neotest-rust",
+      "neotest-deno",
+      "neotest-vitest",
+      "neotest-vim-test",
+    },
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  }
+  use("nvim-neotest/neotest-plenary")
+  use("haydenmeade/neotest-jest")
+  use("nvim-neotest/neotest-go")
+  use("rouge8/neotest-rust")
+  use("MarkEmmons/neotest-deno")
+  use("marilari88/neotest-vitest")
+  use("nvim-neotest/neotest-vim-test")
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -37,4 +62,6 @@ return function(use)
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   }
+
+
 end
