@@ -169,47 +169,82 @@ _G.packer_plugins = {
     url = "https://github.com/folke/neodev.nvim"
   },
   neotest = {
-    after = { "FixCursorHold.nvim" },
+    after = { "neotest-rust", "neotest-deno", "neotest-vitest", "neotest-vim-test", "FixCursorHold.nvim", "neotest-plenary", "neotest-jest", "neotest-go" },
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19config.neotest\frequire\0" },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest",
     url = "https://github.com/nvim-neotest/neotest",
     wants = { "plenary.nvim", "nvim-treesitter", "FixCursorHold.nvim", "neotest-plenary", "neotest-jest", "neotest-go", "neotest-rust", "neotest-deno", "neotest-vitest", "neotest-vim-test" }
   },
   ["neotest-deno"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-deno",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-deno",
     url = "https://github.com/MarkEmmons/neotest-deno"
   },
   ["neotest-go"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-go",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-go",
     url = "https://github.com/nvim-neotest/neotest-go"
   },
   ["neotest-jest"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-jest",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-jest",
     url = "https://github.com/haydenmeade/neotest-jest"
   },
   ["neotest-plenary"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-plenary",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-plenary",
     url = "https://github.com/nvim-neotest/neotest-plenary"
   },
   ["neotest-rust"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-rust",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-rust",
     url = "https://github.com/rouge8/neotest-rust"
   },
   ["neotest-vim-test"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-vim-test",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-vim-test",
     url = "https://github.com/nvim-neotest/neotest-vim-test"
   },
   ["neotest-vitest"] = {
-    loaded = true,
-    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neotest-vitest",
+    load_after = {
+      neotest = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/neotest-vitest",
     url = "https://github.com/marilari88/neotest-vitest"
+  },
+  ["neovim-codicons"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neovim-codicons",
+    url = "https://github.com/ChristianChiarulli/neovim-codicons"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -290,6 +325,34 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+local module_lazy_loads = {
+  ["^neotest"] = "neotest"
+}
+local lazy_load_called = {['packer.load'] = true}
+local function lazy_load_module(module_name)
+  local to_load = {}
+  if lazy_load_called[module_name] then return nil end
+  lazy_load_called[module_name] = true
+  for module_pat, plugin_name in pairs(module_lazy_loads) do
+    if not _G.packer_plugins[plugin_name].loaded and string.match(module_name, module_pat) then
+      to_load[#to_load + 1] = plugin_name
+    end
+  end
+
+  if #to_load > 0 then
+    require('packer.load')(to_load, {module = module_name}, _G.packer_plugins)
+    local loaded_mod = package.loaded[module_name]
+    if loaded_mod then
+      return function(modname) return loaded_mod end
+    end
+  end
+end
+
+if not vim.g.packer_custom_loader_enabled then
+  table.insert(package.loaders, 1, lazy_load_module)
+  vim.g.packer_custom_loader_enabled = true
+end
+
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nv\0\0\3\0\a\0\0146\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0B\0\1\1K\0\1\0\nsetup\20config.whichkey\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")

@@ -1,8 +1,9 @@
 return function(use)
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
+  use('ChristianChiarulli/neovim-codicons')
   -- Lua
-  use {
+   use {
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
@@ -29,16 +30,21 @@ return function(use)
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim"
-    }
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-neotest/neotest-plenary",
+      "haydenmeade/neotest-jest",
+      "nvim-neotest/neotest-go",
+      "rouge8/neotest-rust",
+      "MarkEmmons/neotest-deno",
+      "marilari88/neotest-vitest",
+      "nvim-neotest/neotest-vim-test",
+    },
+    module = { "neotest" },
+    config = function ()
+      require("config.neotest").setup()
+    end
   }
-  use("nvim-neotest/neotest-plenary")
-  use("haydenmeade/neotest-jest")
-  use("nvim-neotest/neotest-go")
-  use("rouge8/neotest-rust")
-  use("MarkEmmons/neotest-deno")
-  use("marilari88/neotest-vitest")
-  use("nvim-neotest/neotest-vim-test")
+
 
   use {
     'VonHeikemen/lsp-zero.nvim',
