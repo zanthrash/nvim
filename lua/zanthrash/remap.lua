@@ -1,9 +1,11 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = '[P]roject [V]iew' })
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = '[P]roject [V]iew' })
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle, { desc = '[P]roject [V]iew' })
 
 --escaping
 vim.keymap.set("i", "jj", "<ESC>")
 vim.keymap.set("t", "jj", "<C-\\><C-n>")
+
 
 -- visual mode moving
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -19,6 +21,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 --greatest remap ever
 vim.keymap.set("x", "<leader>p", "\"_dP")
+
+-- vim.keymap.set("n", "x", "_x")
 
 
 vim.keymap.set("n", "<leader>y", "\"+y")

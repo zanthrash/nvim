@@ -148,6 +148,16 @@ _G.packer_plugins = {
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -169,7 +179,7 @@ _G.packer_plugins = {
     url = "https://github.com/folke/neodev.nvim"
   },
   neotest = {
-    after = { "neotest-rust", "neotest-deno", "neotest-vitest", "neotest-vim-test", "FixCursorHold.nvim", "neotest-plenary", "neotest-jest", "neotest-go" },
+    after = { "FixCursorHold.nvim", "neotest-plenary", "neotest-jest", "neotest-go", "neotest-rust", "neotest-deno", "neotest-vitest", "neotest-vim-test" },
     config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19config.neotest\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -246,6 +256,11 @@ _G.packer_plugins = {
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/neovim-codicons",
     url = "https://github.com/ChristianChiarulli/neovim-codicons"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -255,6 +270,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -268,10 +288,20 @@ _G.packer_plugins = {
     path = "/Users/zan/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
+  },
+  ["package-info.nvim"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/package-info.nvim",
+    url = "https://github.com/vuki656/package-info.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -296,6 +326,11 @@ _G.packer_plugins = {
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["typescript.nvim"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/typescript.nvim",
+    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/undotree",
@@ -315,6 +350,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zan/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/zan/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\nv\0\0\3\0\a\0\0146\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0B\0\1\1K\0\1\0\nsetup\20config.whichkey\frequire\15timeoutlen\ftimeout\6o\bvim\0" },

@@ -1,12 +1,16 @@
 require("zanthrash")
+
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
+
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_bootstrap = true
   vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
   vim.cmd [[packadd packer.nvim]]
 end
+
+
 
 require('packer').startup(function(use)
   -- Package manager
@@ -157,7 +161,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = 'onedark',
     component_separators = '|',
     section_separators = '',
@@ -188,11 +192,16 @@ require('gitsigns').setup {
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
+local actions = require("telescope.actions")
+
 require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        [ '<C-u>'] = false,
+        ['<C-k>'] = actions.move_selection_previous,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+        ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
     },
@@ -349,8 +358,9 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
-
+  html = {},
+  cssls = {},
+  tsserver = {},
   sumneko_lua = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -386,12 +396,27 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+require('lspconfig')["emmet_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {"html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte"}
+})
+
+require("typescript").setup({
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  }
+})
+
+
 -- Turn on lsp status information
 require('fidget').setup()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup {
   snippet = {
@@ -429,7 +454,15 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'buffer'}, -- text w/i the buffer
+    { name = 'path'}, -- file systme paths
   },
+  formatting = {
+    format = require('lspkind').cmp_format({
+      maxwidth = 50,
+      ellipsis_char = "...",
+    })
+  }
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`

@@ -2,8 +2,17 @@ return function(use)
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('ChristianChiarulli/neovim-codicons')
-  -- Lua
-   use {
+  use('christoomey/vim-tmux-navigator')
+  use('tpope/vim-surround')
+  use('nvim-tree/nvim-tree.lua')
+  use('kyazdani42/nvim-web-devicons')
+
+  -- lsp extras
+  use({ "glepnir/lspsaga.nvim", branch = "main" })
+  use("jose-elias-alvarez/typescript.nvim")
+  use("onsails/lspkind.nvim")
+
+  use {
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
@@ -40,7 +49,7 @@ return function(use)
       "nvim-neotest/neotest-vim-test",
     },
     module = { "neotest" },
-    config = function ()
+    config = function()
       require("config.neotest").setup()
     end
   }
@@ -69,5 +78,9 @@ return function(use)
     }
   }
 
+  use({
+    "vuki656/package-info.nvim",
+    requires = "MunifTanjim/nui.nvim",
+  })
 
 end
